@@ -1,5 +1,6 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function () {
    console.log("🚀 Dibujando todos los Canvas...");
+
    drawOriginalCanvas();
    drawSmileyFace();
    drawTriangle();
@@ -7,7 +8,7 @@ window.onload = function() {
    drawArcGrid();
    drawBezierCurves();
    drawPacManScene();
-};
+});
 
 // Función para obtener el contexto del `canvas`
 function getCanvasContext(id) {
