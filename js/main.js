@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
    drawArcGrid();
    drawBezierCurves();
    drawPacManScene();
+   drawCUADRADO();
+   draw1();
 });
 
 // Función para obtener el contexto del `canvas`
@@ -27,6 +29,7 @@ function drawOriginalCanvas() {
    ctx.fillStyle = "purple";
    ctx.fillRect(50, 50, 100, 100);
 }
+ 
 
 // Canvas 2: Carita Sonriente
 function drawTriangleCanvas2() {
@@ -241,6 +244,35 @@ function drawSmileyFace() {
      ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Ojo izquierdo
      ctx.moveTo(95, 65);
      ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Ojo derecho
+     ctx.stroke();
+   }
+ }
+ 
+ function  drawCUADRADO() {
+   const canvas = document.getElementById("canvas10");
+   if (canvas.getContext) {
+     const ctx = canvas.getContext("2d");
+ 
+     ctx.fillRect(25, 25, 100, 100);
+     ctx.clearRect(45, 45, 60, 60);
+     ctx.strokeRect(50, 50, 50, 50);
+   }
+ }
+
+ function draw1() {
+   const canvas = document.getElementById("canvas11");
+   if (canvas.getContext) {
+     const ctx = canvas.getContext("2d");
+ 
+     // Ejemplo de curvas cuadráticas
+     ctx.beginPath();
+     ctx.moveTo(75, 25);
+     ctx.quadraticCurveTo(25, 25, 25, 62.5);
+     ctx.quadraticCurveTo(25, 100, 50, 100);
+     ctx.quadraticCurveTo(50, 120, 30, 125);
+     ctx.quadraticCurveTo(60, 120, 65, 100);
+     ctx.quadraticCurveTo(125, 100, 125, 62.5);
+     ctx.quadraticCurveTo(125, 25, 75, 25);
      ctx.stroke();
    }
  }
